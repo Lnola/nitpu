@@ -5,8 +5,10 @@ import { css } from "styled-components";
 
 const ArrowBlockCss = css`
   background-color: red;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
+  font-size: 45px;
+  color: white;
   align-items: center;
   justify-content: center;
   border-radius: 7px;

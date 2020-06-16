@@ -5,5 +5,6 @@ export const arrowRotations = {
   left: <span>&larr;</span>,
   up: <span>&uarr;</span>,
   down: <span>&darr;</span>,
-  middle: <span>&hArr;</span>,
+  dot: <span>X</span>,
+  none: <span></span>,
 };

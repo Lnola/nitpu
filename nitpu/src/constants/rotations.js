@@ -3,5 +3,6 @@ export const rotations = {
   left: "left",
   up: "up",
   down: "down",
-  middle: "middle",
+  dot: "dot",
+  none: "none",
 };

@@ -1,12 +1,20 @@
 import React from "react";
 
-import { rotations } from "../constants/rotations";
 import Arrow from "../components/common/arrow";
 import Flex from "../components/styled/Flex";
 import { determineArrowRotation } from "../utils/determineArrowRotation";
+import { setTiles } from "../utils/setTiles";
+import { useRecoilState } from "recoil";
+import { recoilDotTile } from "../recoil/recoilDotTile";
+import { recoilNumberOfTiles } from "../recoil/recoilNumberOfTiles";
 
 const Arrows = () => {
-  const array = new Array(5).fill(new Array(5).fill(0));
+  const [numberOfTiles] = useRecoilState(recoilNumberOfTiles);
+  const [dotTile] = useRecoilState(recoilDotTile);
+  dotTile.row = Math.floor(Math.random() * numberOfTiles);
+  dotTile.column = Math.floor(Math.random() * numberOfTiles);
+
+  const array = setTiles(dotTile, numberOfTiles);
 
   return (
     <Flex wrap="wrap">
@@ -15,7 +23,7 @@ const Arrows = () => {
           {row.map((column, columnIndex) => (
             <Arrow
               key={columnIndex}
-              rotation={determineArrowRotation(rowIndex, columnIndex)}
+              rotation={determineArrowRotation(column, dotTile)}
             />
           ))}
         </Flex>

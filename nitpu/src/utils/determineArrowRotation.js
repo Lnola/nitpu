@@ -1,17 +1,23 @@
 import { rotations } from "../constants/rotations";
 
-export const determineArrowRotation = (row, column) => {
+export const determineArrowRotation = (tile, dotTile) => {
   switch (true) {
-    case row < 2 && column < 2:
-      return rotations.down;
-      break;
+    case tile.isDot:
+      return rotations.dot;
 
-    case row > 2 && column < 2:
+    case tile.row === dotTile.row && tile.column < dotTile.column:
+      return rotations.right;
+
+    case tile.row === dotTile.row && tile.column > dotTile.column:
+      return rotations.left;
+
+    case tile.row < dotTile.row && tile.column === dotTile.column:
       return rotations.down;
-      break;
+
+    case tile.row > dotTile.row && tile.column === dotTile.column:
+      return rotations.up;
 
     default:
-      return rotations.middle;
-      break;
+      return rotations.none;
   }
 };
