@@ -1,9 +1,9 @@
 import React from "react";
 import Flex from "../styled/Flex";
-import { arrowRotations } from "../../constants/arrowRotations";
+import { tileType } from "../../constants/tileType";
 import { css } from "styled-components";
 
-const ArrowBlockCss = css`
+const TileBlockCss = css`
   background-color: red;
   height: 100px;
   width: 100px;
@@ -15,8 +15,8 @@ const ArrowBlockCss = css`
   margin: 5px;
 `;
 
-const Arrow = ({ rotation }) => {
-  return <Flex css={ArrowBlockCss}>{arrowRotations[rotation]}</Flex>;
+const Tile = ({ rotation }) => {
+  return <Flex css={TileBlockCss}>{tileType[rotation]}</Flex>;
 };
 
-export default Arrow;
+export default Tile;

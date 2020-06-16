@@ -1,13 +1,13 @@
 import React from "react";
 
-import Arrows from "./levels/1.arrows";
+import Tiles from "./levels/1.tiles";
 import { RecoilRoot } from "recoil";
 
 const App = () => {
   return (
     <>
       <RecoilRoot>
-        <Arrows />
+        <Tiles />
       </RecoilRoot>
     </>
   );

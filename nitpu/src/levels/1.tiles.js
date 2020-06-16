@@ -1,14 +1,14 @@
 import React from "react";
 
-import Arrow from "../components/common/arrow";
+import Tile from "../components/common/Tile";
 import Flex from "../components/styled/Flex";
-import { determineArrowRotation } from "../utils/determineArrowRotation";
+import { determineTileType } from "../utils/determineTileType";
 import { setTiles } from "../utils/setTiles";
 import { useRecoilState } from "recoil";
 import { recoilDotTile } from "../recoil/recoilDotTile";
 import { recoilNumberOfTiles } from "../recoil/recoilNumberOfTiles";
 
-const Arrows = () => {
+const Tiles = () => {
   const [numberOfTiles] = useRecoilState(recoilNumberOfTiles);
   const [dotTile] = useRecoilState(recoilDotTile);
   dotTile.row = Math.floor(Math.random() * numberOfTiles);
@@ -21,9 +21,9 @@ const Arrows = () => {
       {array.map((row, rowIndex) => (
         <Flex key={rowIndex} width="100%">
           {row.map((column, columnIndex) => (
-            <Arrow
+            <Tile
               key={columnIndex}
-              rotation={determineArrowRotation(column, dotTile)}
+              rotation={determineTileType(column, dotTile)}
             />
           ))}
         </Flex>
@@ -32,4 +32,4 @@ const Arrows = () => {
   );
 };
 
-export default Arrows;
+export default Tiles;

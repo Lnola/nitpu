@@ -1,6 +1,6 @@
 import React from "react";
 
-export const arrowRotations = {
+export const tileType = {
   right: <span>&rarr;</span>,
   left: <span>&larr;</span>,
   up: <span>&uarr;</span>,

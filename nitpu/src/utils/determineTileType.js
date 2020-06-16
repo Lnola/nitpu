@@ -1,6 +1,6 @@
 import { rotations } from "../constants/rotations";
 
-export const determineArrowRotation = (tile, dotTile) => {
+export const determineTileType = (tile, dotTile) => {
   switch (true) {
     case tile.isDot:
       return rotations.dot;
