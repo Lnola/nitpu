@@ -2,5 +2,5 @@ import { atom } from "recoil";
 
 export const recoilNumberOfTiles = atom({
   key: "numberOfTiles",
-  default: 5,
+  default: 2,
 });

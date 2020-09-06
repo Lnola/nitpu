@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Tile from "../components/common/Tile";
 import Flex from "../components/styled/Flex";
@@ -7,14 +7,19 @@ import { setTiles } from "../utils/setTiles";
 import { useRecoilState } from "recoil";
 import { recoilDotTile } from "../recoil/recoilDotTile";
 import { recoilNumberOfTiles } from "../recoil/recoilNumberOfTiles";
+import { setRandomDotTile } from "../utils/setRandomDotTile";
 
 const Tiles = () => {
   const [numberOfTiles] = useRecoilState(recoilNumberOfTiles);
-  const [dotTile] = useRecoilState(recoilDotTile);
-  dotTile.row = Math.floor(Math.random() * numberOfTiles);
-  dotTile.column = Math.floor(Math.random() * numberOfTiles);
+  const [dotTile, setDotTile] = useRecoilState(recoilDotTile);
+
+  useEffect(() => {
+    setRandomDotTile(setDotTile, numberOfTiles);
+  }, [setDotTile, numberOfTiles]);
 
   const array = setTiles(dotTile, numberOfTiles);
+
+  console.log(array);
 
   return (
     <Flex wrap="wrap">
@@ -24,6 +29,7 @@ const Tiles = () => {
             <Tile
               key={columnIndex}
               rotation={determineTileType(column, dotTile)}
+              tile={column}
             />
           ))}
         </Flex>
