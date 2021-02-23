@@ -1,7 +1,7 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 export const TileBlockCss = css`
-  background-color: ${({ wasVisited }) => (wasVisited ? "green" : "red")};
+  background-color: ${({ wasVisited }) => (wasVisited ? 'green' : 'red')};
   height: 100px;
   width: 100px;
   font-size: 45px;

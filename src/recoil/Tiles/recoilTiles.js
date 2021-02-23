@@ -1,6 +1,6 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const recoilTiles = atom({
-  key: "tiles",
+  key: 'tiles',
   default: [],
 });

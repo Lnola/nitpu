@@ -1,7 +1,7 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const recoilDotTile = atom({
-  key: "dotTile",
+  key: 'dotTile',
   default: {
     row: 0,
     column: 0,

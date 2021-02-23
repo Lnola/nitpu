@@ -1,4 +1,4 @@
-import { tile } from "../../constants/tile";
+import { tile } from '../../constants/tile';
 
 export const createTiles = (dotTile, numberOfTiles) => {
   let array = [];
@@ -11,9 +11,7 @@ export const createTiles = (dotTile, numberOfTiles) => {
 const getArrayWithTiles = (rowIndex, dotTile, numberOfTiles) => {
   let arrayWithTiles = [];
   for (let columnIndex = 0; columnIndex < numberOfTiles; columnIndex++)
-    arrayWithTiles.push(
-      tile(rowIndex, columnIndex, isDotTile(dotTile, rowIndex, columnIndex))
-    );
+    arrayWithTiles.push(tile(rowIndex, columnIndex, isDotTile(dotTile, rowIndex, columnIndex)));
 
   return arrayWithTiles;
 };

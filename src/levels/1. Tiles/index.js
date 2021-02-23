@@ -1,9 +1,9 @@
-import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import SizePicker from "./screens/SizePicker";
-import TileBoard from "./screens/TileBoard";
-import EndScreen from "./screens/EndScreen";
+import SizePicker from './screens/SizePicker';
+import TileBoard from './screens/TileBoard';
+import EndScreen from './screens/EndScreen';
 
 const Tiles = () => {
   return (

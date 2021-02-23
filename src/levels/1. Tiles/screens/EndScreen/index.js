@@ -1,8 +1,8 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
 
-import { recoilTiles } from "../../../../recoil/Tiles/recoilTiles";
+import { recoilTiles } from '../../../../recoil/Tiles/recoilTiles';
 
 const EndScreen = () => {
   const history = useHistory();
@@ -11,7 +11,7 @@ const EndScreen = () => {
 
   const handleRestart = () => {
     setTiles([]);
-    history.push("/");
+    history.push('/');
   };
 
   return (

@@ -1,15 +1,15 @@
-import React from "react";
-import { useRecoilState } from "recoil";
+import React from 'react';
+import { useRecoilState } from 'recoil';
 
-import Flex from "../../styled/Flex";
-import { TileBlockCss } from "./index.styled";
+import Flex from '../../styled/Flex';
+import { TileBlockCss } from './index.styled';
 
-import { getDotTile } from "../../../utils/Tiles/getDotTile";
-import { setTileAsVisited } from "../../../utils/Tiles/setTileAsVisited";
-import { setRandomDotTile } from "../../../utils/Tiles/setRandomDotTile";
+import { getDotTile } from '../../../utils/Tiles/getDotTile';
+import { setTileAsVisited } from '../../../utils/Tiles/setTileAsVisited';
+import { setRandomDotTile } from '../../../utils/Tiles/setRandomDotTile';
 
-import { tileType } from "../../../constants/tileType";
-import { recoilTiles } from "../../../recoil/Tiles/recoilTiles";
+import { tileType } from '../../../constants/tileType';
+import { recoilTiles } from '../../../recoil/Tiles/recoilTiles';
 
 const Tile = ({ rotation, tile }) => {
   const [tiles, setTiles] = useRecoilState(recoilTiles);
@@ -23,11 +23,7 @@ const Tile = ({ rotation, tile }) => {
   };
 
   return (
-    <Flex
-      css={TileBlockCss}
-      wasVisited={tile.wasVisited}
-      onClick={handleTileClick}
-    >
+    <Flex css={TileBlockCss} wasVisited={tile.wasVisited} onClick={handleTileClick}>
       {tileType[rotation]}
     </Flex>
   );
