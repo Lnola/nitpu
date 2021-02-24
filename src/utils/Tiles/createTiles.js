@@ -1,4 +1,4 @@
-import { tile } from '../../constants/tile';
+import { tile } from '../../constants/Tiles/tile';
 
 export const createTiles = (dotTile, numberOfTiles) => {
   let array = [];

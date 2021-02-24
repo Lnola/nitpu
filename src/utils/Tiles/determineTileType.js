@@ -1,4 +1,4 @@
-import { rotations } from '../../constants/rotations';
+import { rotations } from '../../constants/Tiles/rotations';
 
 export const determineTileType = (tile, dotTile) => {
   if (dotTile)

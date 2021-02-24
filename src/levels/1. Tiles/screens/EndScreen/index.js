@@ -11,7 +11,7 @@ const EndScreen = () => {
 
   const handleRestart = () => {
     setTiles([]);
-    history.push('/');
+    history.push('/1');
   };
 
   return (

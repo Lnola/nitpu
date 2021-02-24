@@ -18,7 +18,7 @@ const SizePicker = () => {
 
     setNumberOfTiles(+numberOfTiles);
     createRandomDotTile(setDotTile, +numberOfTiles);
-    history.push('/tile-board');
+    history.push('/1/tile-board');
   };
 
   return (

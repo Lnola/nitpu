@@ -8,7 +8,7 @@ import { getDotTile } from '../../../utils/Tiles/getDotTile';
 import { setTileAsVisited } from '../../../utils/Tiles/setTileAsVisited';
 import { setRandomDotTile } from '../../../utils/Tiles/setRandomDotTile';
 
-import { tileType } from '../../../constants/tileType';
+import { tileType } from '../../../constants/Tiles/tileType';
 import { recoilTiles } from '../../../recoil/Tiles/recoilTiles';
 
 const Tile = ({ rotation, tile }) => {

@@ -27,7 +27,7 @@ const TileBoard = () => {
 
   useEffect(() => {
     if (areAllTilesVisited(tiles)) {
-      history.push('/end-screen');
+      history.push('/1/end-screen');
     }
   }, [tiles, history]);
 
