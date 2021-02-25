@@ -1,19 +1,22 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import Tiles from 'levels/1. Tiles';
-import Typing from 'levels/2. Typing';
+import Routes from 'Routes';
+import Dashboard from 'levels/Dashboard';
+
+import { GlobalStyles, theme } from 'index.styled';
 
 const App = () => {
   return (
     <RecoilRoot>
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/1" component={Tiles} />
-          <Route exact path="/2" component={Typing} />
-          <Redirect to="/" />
-        </Switch>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Dashboard />
+          <Routes />
+        </ThemeProvider>
       </BrowserRouter>
     </RecoilRoot>
   );
