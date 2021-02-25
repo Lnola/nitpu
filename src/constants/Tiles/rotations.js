@@ -4,5 +4,8 @@ export const rotations = {
   up: 'up',
   down: 'down',
   dot: 'dot',
+  w: 'w',
+  i: 'i',
+  n: 'n',
   none: 'none',
 };

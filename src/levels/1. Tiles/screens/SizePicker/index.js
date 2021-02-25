@@ -2,6 +2,9 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 
+import { StyledForm, StyledInput } from './index.styled';
+import StyledButton from 'components/styled/Button';
+
 import { createRandomDotTile } from '../../../../utils/Tiles/setRandomDotTile';
 
 import { recoilDotTile } from '../../../../recoil/Tiles/recoilDotTile';
@@ -16,18 +19,26 @@ const SizePicker = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    setNumberOfTiles(+numberOfTiles);
-    createRandomDotTile(setDotTile, +numberOfTiles);
-    history.push('/1/tile-board');
+    if (+numberOfTiles > 2) {
+      setNumberOfTiles(+numberOfTiles);
+      createRandomDotTile(setDotTile, +numberOfTiles);
+      history.push('/1/tile-board');
+    }
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input type="number" value={numberOfTiles} onChange={({ target }) => setNumberOfTiles(target.value)} />
-        <input type="submit" />
-      </form>
-    </>
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledInput
+        type="number"
+        placeholder="Can't be < 3"
+        value={numberOfTiles}
+        onChange={({ target }) => setNumberOfTiles(target.value)}
+        autoFocus
+      />
+      <StyledButton size="1.5rem" type="submit">
+        Submit
+      </StyledButton>
+    </StyledForm>
   );
 };
 

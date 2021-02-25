@@ -3,16 +3,18 @@ import styled, { css } from 'styled-components';
 
 const button = css`
   display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
   margin: 10px;
-  padding: 10px 15px;
-  border-radius: 9px;
-  color: #fff;
-  background: #80d0c7;
-  font-weight: 900;
+  border: none;
+  background-color: transparent;
+  color: ${({ theme }) => theme.primaryLight};
   text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 800;
+  font-size: ${({ size }) => size};
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -20,7 +22,6 @@ const StyledButton = styled.button`
 `;
 
 export const StyledButtonLink = styled(Link)`
-  text-decoration: none;
   ${button}
 `;
 

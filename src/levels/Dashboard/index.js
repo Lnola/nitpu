@@ -11,10 +11,10 @@ const Dashboard = () => {
   useOnClickOutside(ref, () => setOpen(false));
 
   return (
-    <div ref={ref}>
+    <aside ref={ref}>
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} />
-    </div>
+    </aside>
   );
 };
 

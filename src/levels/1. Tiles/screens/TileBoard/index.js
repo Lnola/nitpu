@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { useHistory } from 'react-router-dom';
 
@@ -17,26 +17,35 @@ import { recoilDotTile } from '../../../../recoil/Tiles/recoilDotTile';
 const TileBoard = () => {
   const history = useHistory();
 
+  const [isWin, setIsWin] = useState(false);
+
   const [numberOfTiles] = useRecoilState(recoilNumberOfTiles);
   const [tiles, setTiles] = useRecoilState(recoilTiles);
   const [dotTile] = useRecoilState(recoilDotTile);
 
   useEffect(() => {
     setTiles(createTiles(dotTile, numberOfTiles));
-  }, [setTiles, dotTile, numberOfTiles]);
+  }, [setTiles, dotTile, numberOfTiles, isWin]);
 
   useEffect(() => {
     if (areAllTilesVisited(tiles)) {
-      history.push('/1/end-screen');
+      setIsWin(true);
+      setTimeout(() => {
+        history.push('/1/end-screen');
+      }, 1000);
     }
   }, [tiles, history]);
 
   return (
     <Flex wrap="wrap">
       {tiles.map((row, rowIndex) => (
-        <Flex key={rowIndex} width="100%">
+        <Flex key={rowIndex} width="100%" justifyContent="center">
           {row.map((column, columnIndex) => (
-            <Tile key={columnIndex} rotation={determineTileType(column, getDotTile(tiles))} tile={column} />
+            <Tile
+              key={columnIndex}
+              rotation={determineTileType(column, getDotTile(tiles), isWin, numberOfTiles)}
+              tile={column}
+            />
           ))}
         </Flex>
       ))}

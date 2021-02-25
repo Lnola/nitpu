@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledBurger } from './index.styled';
 
 const Burger = ({ open, setOpen }) => {

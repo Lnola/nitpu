@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   html, body {
@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.primaryLight};
     font-family: "Roboto";
     text-rendering: optimizeLegibility;
+    height: 100vh;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -23,6 +24,12 @@ export const GlobalStyles = createGlobalStyle`
     user-select: none;
   }
   `;
+
+export const StyledContainer = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const theme = {
   primaryDark: '#0D0C1D',
