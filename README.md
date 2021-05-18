@@ -1,2 +1,2 @@
 # nitpu
-Random, random, random...
+Random project for sharpening frontend and design skills 
