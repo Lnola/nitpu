@@ -13,7 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
     font-family: "Roboto";
-    text-rendering: optimizeLegibility;
     height: 100vh;
 
     -webkit-touch-callout: none;
@@ -29,6 +28,7 @@ export const StyledContainer = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const theme = {
@@ -36,4 +36,6 @@ export const theme = {
   primaryLight: '#EFFFFA',
   primaryHover: '#343078',
   mobile: '576px',
+  green: '#65ff7a',
+  salmon: '#ff9165',
 };
