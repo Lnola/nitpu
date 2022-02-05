@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <aside ref={ref}>
       <Burger open={open} setOpen={setOpen} />
-      <Menu open={open} />
+      <Menu open={open} setOpen={setOpen} />
     </aside>
   );
 };

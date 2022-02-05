@@ -29,7 +29,7 @@ export const StyledI = styled.span`
     content: '';
     background: ${({ background, theme }) => background || theme.green};
     position: absolute;
-    padding: 1.1rem;
+    padding: 1rem;
     border-radius: 0.3rem;
 
     animation: ${moveUpDown} 3s ease-in-out infinite;
