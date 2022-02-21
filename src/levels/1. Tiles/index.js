@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import SizePicker from './screens/SizePicker';
 import TileBoard from './screens/TileBoard';
@@ -12,6 +12,7 @@ const Tiles = () => {
         <Route exact path="/1" component={SizePicker} />
         <Route exact path="/1/tile-board" component={TileBoard} />
         <Route exact path="/1/end-screen" component={EndScreen} />
+        <Redirect to="/1" />
       </Switch>
     </BrowserRouter>
   );

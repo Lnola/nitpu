@@ -28,9 +28,8 @@ const checkTrue = keyframes`
   }
 `;
 
-const StyledTypingTitle = styled.header`
+const StyledTypingTitle = styled.section`
   animation: ${checkFalse} 2s ease-in-out 1s, ${checkFalse} 2s ease-in-out 6s, ${checkTrue} 2s ease-in-out 10s;
-  margin-top: -5%;
   font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: 0.5rem;

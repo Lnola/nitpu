@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { useHistory } from 'react-router-dom';
 
+import { StyledInput, StyledTypingInput, StyledFeedTape } from './index.styled';
+
 import { getText } from 'utils/Typing/getText';
 
 import { recoilTypingScore } from 'recoil/Typing/recoilTypingScore';
@@ -24,7 +26,7 @@ const TypingInput = () => {
       setStarted(true);
       setTimerInterval(
         setInterval(() => {
-          setTimer(t => t + 1);
+          setTimer(t => t - 1);
         }, 1000),
       );
     }
@@ -47,22 +49,22 @@ const TypingInput = () => {
   }, []);
 
   useEffect(() => {
-    if (timer === 30) {
-      setTimer(0);
+    if (timer === 0) {
+      setTimer(60);
       clearInterval(timerInterval);
       history.push('/2/end-screen');
     }
   }, [timer, history, timerInterval, setTimer]);
 
   return (
-    <>
-      <input type="text" value={input} onChange={handleTyping} onKeyUp={handleWordSubmit} autoFocus />
-      <div>
+    <StyledTypingInput>
+      <StyledInput type="text" value={input} onChange={handleTyping} onKeyUp={handleWordSubmit} autoFocus />
+      <StyledFeedTape>
         {text?.map((word, index) => (
           <span key={index}> {word}</span>
         ))}
-      </div>
-    </>
+      </StyledFeedTape>
+    </StyledTypingInput>
   );
 };
 
