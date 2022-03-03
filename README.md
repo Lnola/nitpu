@@ -1,2 +1,2 @@
 # nitpu
-Random project for sharpening frontend and design skills 
+Web based games collection for sharpening frontend and design skills. Using React with RecoilJs for state management.
