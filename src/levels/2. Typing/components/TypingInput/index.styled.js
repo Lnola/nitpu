@@ -15,6 +15,8 @@ const StyledInput = styled.input`
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2%;
+  border-bottom: 0.5rem dashed ${({ theme }) => theme.primaryLight};
+  padding: 0.5rem 0;
 
   color: ${({ theme }) => theme.primaryLight};
   ${({ isInputValid }) => (isInputValid ? validInputCss : isInputValid !== undefined && invalidInputCss)};

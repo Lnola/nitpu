@@ -18,7 +18,7 @@ const StyledScore = styled.article`
 `;
 
 const StyledTimer = styled.h3`
-  ${({ isEnding }) => isEnding && 'color: red;'}
+  ${({ isEnding, theme }) => isEnding && `color: ${theme.salmon};`}
 `;
 
 export { StyledScoresWrapper, StyledScore, StyledTimer };
