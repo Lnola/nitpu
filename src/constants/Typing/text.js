@@ -5,6 +5,6 @@ export default [
     text
       .toLowerCase()
       .split(';')
-      .filter(word => word.length > 2),
+      .filter(word => word.length > 2 && !word.includes("'")),
   ),
 ];

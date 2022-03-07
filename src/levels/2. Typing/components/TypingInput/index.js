@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { StyledInput, StyledTypingInput, StyledFeedTape } from './index.styled';
 
 import { getText } from 'utils/Typing/getText';
+import { validateInput } from 'utils/Typing/validateInput';
 
 import { recoilTypingScore } from 'recoil/Typing/recoilTypingScore';
 import { recoilTypingTimer } from 'recoil/Typing/recoilTypingTimer';
@@ -17,6 +18,7 @@ const TypingInput = () => {
 
   const [text, setText] = useState();
   const [input, setInput] = useState('');
+  const [isInputValid, setIsInputValid] = useState();
   const [started, setStarted] = useState(false);
   const [timerInterval, setTimerInterval] = useState();
 
@@ -32,16 +34,8 @@ const TypingInput = () => {
     }
   };
 
-  const handleWordSubmit = ({ key }) => {
-    if (key === 'Enter' || key === ' ') {
-      if (input === text[0]) {
-        setScore(prevState => ({ ...prevState, correct: prevState.correct + 1 }));
-      }
-
-      text.shift();
-      setInput('');
-      setScore(prevState => ({ ...prevState, total: prevState.total + 1 }));
-    }
+  const handleKeyPress = ({ key }) => {
+    validateInput(key, input, setInput, setScore, text, setIsInputValid);
   };
 
   useEffect(() => {
@@ -58,7 +52,14 @@ const TypingInput = () => {
 
   return (
     <StyledTypingInput>
-      <StyledInput type="text" value={input} onChange={handleTyping} onKeyUp={handleWordSubmit} autoFocus />
+      <StyledInput
+        type="text"
+        value={input}
+        isInputValid={isInputValid}
+        onChange={handleTyping}
+        onKeyUp={handleKeyPress}
+        autoFocus
+      />
       <StyledFeedTape>
         {text?.map((word, index) => (
           <span key={index}> {word}</span>

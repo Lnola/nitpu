@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { css } from 'styled-components';
 
 const StyledTypingInput = styled.section`
   max-width: 70%;
@@ -11,10 +12,21 @@ const StyledInput = styled.input`
   outline: none;
   border: none;
   background-color: transparent;
-  color: ${({ theme }) => theme.primaryLight};
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2%;
+
+  color: ${({ theme }) => theme.primaryLight};
+  ${({ isInputValid }) => (isInputValid ? validInputCss : isInputValid !== undefined && invalidInputCss)};
+`;
+
+const validInputCss = css`
+  color: ${({ theme }) => theme.green};
+`;
+
+const invalidInputCss = css`
+  text-decoration: line-through;
+  color: ${({ theme }) => theme.salmon};
 `;
 
 const StyledFeedTape = styled.div`
